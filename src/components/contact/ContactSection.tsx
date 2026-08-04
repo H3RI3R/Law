@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 
 interface ContactSectionProps {
   onOpenConsultation: () => void;
@@ -13,15 +14,14 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
     <footer id="contact" className="bg-[#3A3A3A] text-white py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div>
-          <div className="text-[#B58B66] font-serif text-3xl font-bold flex items-center leading-none mb-4">
-            <span className="text-4xl mr-1">A</span>
-            <div className="flex flex-col">
-              <span>Aprajita</span>
-              <span className="text-lg">Legal</span>
-            </div>
-            <div className="text-white/80 text-[0.55rem] uppercase tracking-widest font-semibold border-l border-[#B58B66] pl-2 ml-3 leading-tight">
-              Advocates &amp; Solicitors
-            </div>
+          <div className="mb-4">
+            <Image
+              src="/logo.png"
+              alt="Aprajita Legal Logo"
+              width={200}
+              height={60}
+              className="h-12 w-auto object-contain brightness-0 invert"
+            />
           </div>
           <p className="text-white/70 text-sm max-w-md leading-relaxed mb-6">
             Boutique legal practice based in New Delhi providing strategic litigation, tax advisory, arbitration, and economic offences defense across India.

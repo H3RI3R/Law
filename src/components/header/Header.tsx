@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { NavItemModel } from "@/models/domain";
 
 interface HeaderProps {
@@ -10,20 +11,18 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ navItems, onOpenConsultation }) => {
   return (
-    <header className="w-full py-6 px-8 lg:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-sm">
+    <header className="w-full py-4 px-8 lg:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-sm">
       {/* Logo */}
-      <div className="flex items-center gap-2 cursor-pointer">
-        <div className="text-[#9C7A58] font-serif text-3xl font-bold flex items-center leading-none">
-          <span className="text-4xl mr-1">A</span>
-          <div className="flex flex-col">
-            <span>Aprajita</span>
-            <span className="text-lg">Legal</span>
-          </div>
-        </div>
-        <div className="text-[#9C7A58] text-[0.5rem] uppercase tracking-widest font-semibold border-l border-[#9C7A58] pl-2 ml-1 leading-tight">
-          Advocates<br />&amp; Solicitors
-        </div>
-      </div>
+      <a href="#" className="flex items-center gap-3 cursor-pointer">
+        <Image
+          src="/logo.png"
+          alt="Aprajita Legal Logo"
+          width={180}
+          height={50}
+          className="h-10 md:h-12 w-auto object-contain"
+          priority
+        />
+      </a>
 
       {/* Navigation */}
       <nav className="hidden md:flex gap-8 text-[#6B6B6B] text-sm font-medium">
