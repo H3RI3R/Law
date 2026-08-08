@@ -3,124 +3,123 @@ import { AdvocateModel, PracticeAreaModel, NavItemModel, StatModel, AwardModel }
 export class LandingPageDataService {
   public static getNavigationItems(): NavItemModel[] {
     return [
-      new NavItemModel("Home", "#", true),
-      new NavItemModel("About", "#about"),
-      new NavItemModel("Practice Areas", "#practice-areas"),
-      new NavItemModel("Advocates", "#advocates"),
-      new NavItemModel("Sectors", "#sectors"),
-      new NavItemModel("Contact", "#contact"),
+      { label: "Home", href: "/" },
+      { label: "About", href: "/about" },
+      { label: "Practice Areas", href: "/practice-areas" },
+      { label: "Advocates", href: "/advocates" },
+      { label: "Sectors", href: "/sectors" },
+      { label: "Contact", href: "/contact" },
     ];
   }
-
   public static getAwards(): AwardModel[] {
     return [
-      new AwardModel("award-1", 3, "Best Law Firm", "2022"),
-      new AwardModel("award-2", 3, "Client Choice", "Award"),
+      { id: "award-1", stars: 3, title: "Best Law Firm", year: "2022" },
+      { id: "award-2", stars: 3, title: "Client Choice", year: "Award" },
     ];
   }
 
   public static getStatistics(): StatModel[] {
     return [
-      new StatModel("stat-1", "30+", "Years Combined Expertise"),
-      new StatModel("stat-2", "12K+", "Matters Represented"),
-      new StatModel("stat-3", "95%", "Client Approval", true),
-      new StatModel("stat-4", "13+", "Sectors Advised"),
+      { id: "stat-1", value: "30+", label: "Years Combined Expertise" },
+      { id: "stat-2", value: "12K+", label: "Matters Represented" },
+      { id: "stat-3", value: "95%", label: "Client Approval", highlighted: true },
+      { id: "stat-4", value: "13+", label: "Sectors Advised" },
     ];
   }
 
   public static getAdvocates(): AdvocateModel[] {
     return [
-      new AdvocateModel(
-        "prem-kandpal",
-        "Prem Kandpal",
-        "Advocate | Lead Counsel",
-        "LLB, LL.M. (NLUJ)",
-        "Prem is an accomplished legal professional with over a decade of experience specializing in taxation, corporate, and regulatory laws. A law graduate from Delhi University and an LL.M. holder from National Law University, Jodhpur—where he specialized in tax and corporate laws—Prem brings a robust blend of academic excellence and hands-on litigation expertise to his practice. Prem offers strategic legal counsel, litigation, and advisory services in complex matters relating to GST, Customs, Excise, VAT, Service Tax, Income Tax, Foreign Trade Policy, and economic offences.",
-        ["GST & Indirect Tax", "Customs & Foreign Trade", "White-Collar Crime Defense", "Arbitration & Litigation"],
-        "10+ Years",
-        ["Samsung", "Philip Morris", "Carlsberg", "Pernod Ricard", "AB InBev", "Posco India", "DDCA", "B.L. Agro", "A2Z Infra", "Shri Lal Mahal Group"],
-        true
-      ),
-      new AdvocateModel(
-        "amrendra-singh",
-        "Amrendra Singh",
-        "Advocate",
-        "BA LLB",
-        "Amrendra Singh is a qualified lawyer and a law graduate with significant experience in litigation and advisory services, particularly in the areas of Goods and Services Tax (GST), Customs, Foreign Trade Policy, and Commercial Laws. He regularly represents clients before various High Courts, Tribunals, and District Courts.",
-        ["GST Practice", "Customs & FTP", "Commercial Litigation", "Regulatory Advisory"]
-      ),
-      new AdvocateModel(
-        "pramod-kandpal",
-        "Pramod Kandpal",
-        "Advocate",
-        "LLB, CA (IPCC), M. Com",
-        "Pramod Kandpal is a seasoned legal professional practicing in Delhi, holding an LLB from Delhi University, M.Com from Khalsa College, and CA (IPCC) qualification from ICAI. With a robust foundation in both law and commerce, Pramod provides comprehensive advisory and litigation services in Income Tax, GST, corporate law, and regulatory compliance.",
-        ["Direct Tax & Income Tax", "GST Adjudication", "Corporate Law", "Financial Regulatory"]
-      ),
-      new AdvocateModel(
-        "ketan-jain",
-        "Ketan Jain",
-        "Advocate",
-        "LL.B.",
-        "Ketan Jain is an experienced advocate with over six years of dedicated practice in litigation and legal advisory services, focusing on indirect tax laws and regulatory matters. He has played a pivotal role in preparing policy representations before the Central Board of Indirect Taxes and Customs (CBIC).",
-        ["Indirect Tax Litigation", "CBIC Policy Submissions", "Service Tax & Excise", "Writ Petitions"],
-        "6+ Years",
-        ["Carlsberg", "Gawar Construction", "Pernod Ricard", "A2Z Infra", "ITI Limited"]
-      ),
-      new AdvocateModel(
-        "nakul-sehgal",
-        "Nakul Sehgal",
-        "Advocate",
-        "LLB, LLM",
-        "Nakul Sehgal is a law graduate from Delhi University and holds an LLM from Kurukshetra University. With over 6 years of experience in litigation and advisory work, he serves as panel counsel for NBCC (India) Ltd. and specializes in arbitration, commercial disputes, insolvency, banking, and PMLA matters.",
-        ["Arbitration & PMLA", "Bail & Criminal Practice", "Corporate Disputes", "Panel Counsel NBCC"],
-        "6+ Years"
-      ),
-      new AdvocateModel(
-        "rohit-gupta",
-        "Rohit Gupta",
-        "Advocate-on-Record (AOR)",
-        "Faculty of Law, DU",
-        "Rohit Gupta is an Advocate-on-Record with over 8 years of experience specializing in commercial and property law, family disputes, and succession matters. He regularly appears before the Hon’ble Supreme Court of India and High Courts.",
-        ["Supreme Court AOR Practice", "Commercial & Property Law", "Succession & Family Law"],
-        "8+ Years"
-      ),
-      new AdvocateModel(
-        "himanshu-gupta",
-        "Himanshu Gupta",
-        "Advocate",
-        "LL.B.",
-        "Associate Advocate focusing on courtroom litigation, civil disputes, and advisory.",
-        ["Dispute Resolution", "Civil Litigation"]
-      ),
-      new AdvocateModel(
-        "ankur-saini",
-        "Ankur Saini",
-        "Advocate",
-        "LL.B.",
-        "Associate Advocate representing corporate clients in tax and commercial disputes.",
-        ["Taxation Disputes", "Regulatory Compliances"]
-      ),
-      new AdvocateModel(
-        "atharv-prabhakar",
-        "Atharv Prabhakar",
-        "Advocate",
-        "LL.B.",
-        "Associate Advocate assisting in arbitration, writs, and regulatory proceedings.",
-        ["Arbitration", "Courtroom Advocacy"]
-      ),
+      {
+        id: "prem-kandpal",
+        name: "Prem Kandpal",
+        designation: "Advocate | Lead Counsel",
+        qualifications: "LLB, LL.M. (NLUJ)",
+        bio: "Prem is an accomplished legal professional with over a decade of experience specializing in taxation, corporate, and regulatory laws. A law graduate from Delhi University and an LL.M. holder from National Law University, Jodhpur—where he specialized in tax and corporate laws—Prem brings a robust blend of academic excellence and hands-on litigation expertise to his practice. Prem offers strategic legal counsel, litigation, and advisory services in complex matters relating to GST, Customs, Excise, VAT, Service Tax, Income Tax, Foreign Trade Policy, and economic offences.",
+        specializations: ["GST & Indirect Tax", "Customs & Foreign Trade", "White-Collar Crime Defense", "Arbitration & Litigation"],
+        experience: "10+ Years",
+        notableClients: ["Samsung", "Philip Morris", "Carlsberg", "Pernod Ricard", "AB InBev", "Posco India", "DDCA", "B.L. Agro", "A2Z Infra", "Shri Lal Mahal Group"],
+        isFoundingPartner: true
+      },
+      {
+        id: "amrendra-singh",
+        name: "Amrendra Singh",
+        designation: "Advocate",
+        qualifications: "BA LLB",
+        bio: "Amrendra Singh is a qualified lawyer and a law graduate with significant experience in litigation and advisory services, particularly in the areas of Goods and Services Tax (GST), Customs, Foreign Trade Policy, and Commercial Laws. He regularly represents clients before various High Courts, Tribunals, and District Courts.",
+        specializations: ["GST Practice", "Customs & FTP", "Commercial Litigation", "Regulatory Advisory"]
+      },
+      {
+        id: "pramod-kandpal",
+        name: "Pramod Kandpal",
+        designation: "Advocate",
+        qualifications: "LLB, CA (IPCC), M. Com",
+        bio: "Pramod Kandpal is a seasoned legal professional practicing in Delhi, holding an LLB from Delhi University, M.Com from Khalsa College, and CA (IPCC) qualification from ICAI. With a robust foundation in both law and commerce, Pramod provides comprehensive advisory and litigation services in Income Tax, GST, corporate law, and regulatory compliance.",
+        specializations: ["Direct Tax & Income Tax", "GST Adjudication", "Corporate Law", "Financial Regulatory"]
+      },
+      {
+        id: "ketan-jain",
+        name: "Ketan Jain",
+        designation: "Advocate",
+        qualifications: "LL.B.",
+        bio: "Ketan Jain is an experienced advocate with over six years of dedicated practice in litigation and legal advisory services, focusing on indirect tax laws and regulatory matters. He has played a pivotal role in preparing policy representations before the Central Board of Indirect Taxes and Customs (CBIC).",
+        specializations: ["Indirect Tax Litigation", "CBIC Policy Submissions", "Service Tax & Excise", "Writ Petitions"],
+        experience: "6+ Years",
+        notableClients: ["Carlsberg", "Gawar Construction", "Pernod Ricard", "A2Z Infra", "ITI Limited"]
+      },
+      {
+        id: "nakul-sehgal",
+        name: "Nakul Sehgal",
+        designation: "Advocate",
+        qualifications: "LLB, LLM",
+        bio: "Nakul Sehgal is a law graduate from Delhi University and holds an LLM from Kurukshetra University. With over 6 years of experience in litigation and advisory work, he serves as panel counsel for NBCC (India) Ltd. and specializes in arbitration, commercial disputes, insolvency, banking, and PMLA matters.",
+        specializations: ["Arbitration & PMLA", "Bail & Criminal Practice", "Corporate Disputes", "Panel Counsel NBCC"],
+        experience: "6+ Years"
+      },
+      {
+        id: "rohit-gupta",
+        name: "Rohit Gupta",
+        designation: "Advocate-on-Record (AOR)",
+        qualifications: "Faculty of Law, DU",
+        bio: "Rohit Gupta is an Advocate-on-Record with over 8 years of experience specializing in commercial and property law, family disputes, and succession matters. He regularly appears before the Hon’ble Supreme Court of India and High Courts.",
+        specializations: ["Supreme Court AOR Practice", "Commercial & Property Law", "Succession & Family Law"],
+        experience: "8+ Years"
+      },
+      {
+        id: "himanshu-gupta",
+        name: "Himanshu Gupta",
+        designation: "Advocate",
+        qualifications: "LL.B.",
+        bio: "Associate Advocate focusing on courtroom litigation, civil disputes, and advisory.",
+        specializations: ["Dispute Resolution", "Civil Litigation"]
+      },
+      {
+        id: "ankur-saini",
+        name: "Ankur Saini",
+        designation: "Advocate",
+        qualifications: "LL.B.",
+        bio: "Associate Advocate representing corporate clients in tax and commercial disputes.",
+        specializations: ["Taxation Disputes", "Regulatory Compliances"]
+      },
+      {
+        id: "atharv-prabhakar",
+        name: "Atharv Prabhakar",
+        designation: "Advocate",
+        qualifications: "LL.B.",
+        bio: "Associate Advocate assisting in arbitration, writs, and regulatory proceedings.",
+        specializations: ["Arbitration", "Courtroom Advocacy"]
+      },
     ];
   }
 
   public static getPracticeAreas(): PracticeAreaModel[] {
     return [
-      new PracticeAreaModel(
-        "indirect-tax",
-        "indirect-tax",
-        "Indirect Tax (GST, Customs, SEZ)",
-        "GST, Customs, SEZ & Foreign Trade Policy, Service Tax & Excise",
-        "Comprehensive advisory, litigation, and defense in GST, Customs, SEZ, Anti-Dumping, and legacy tax matters.",
-        {
+      {
+        id: "indirect-tax",
+        slug: "indirect-tax",
+        title: "Indirect Tax (GST, Customs, SEZ)",
+        subtitle: "GST, Customs, SEZ & Foreign Trade Policy, Service Tax & Excise",
+        shortDescription: "Comprehensive advisory, litigation, and defense in GST, Customs, SEZ, Anti-Dumping, and legacy tax matters.",
+        detailedProfile: {
           intro: "Aprajita Legal has developed a specialized and robust Indirect Tax practice catering to complex requirements under India's GST, Customs, SEZ, and legacy tax frameworks.",
           services: [
             {
@@ -153,14 +152,14 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
-      new PracticeAreaModel(
-        "direct-tax",
-        "direct-tax",
-        "Direct Tax & International Taxation",
-        "Income Tax, International Taxation, Transfer Pricing",
-        "Strategic direct tax planning, treaty interpretation, transfer pricing audits, and defense in tax prosecutions.",
-        {
+      },
+      {
+        id: "direct-tax",
+        slug: "direct-tax",
+        title: "Direct Tax & International Taxation",
+        subtitle: "Income Tax, International Taxation, Transfer Pricing",
+        shortDescription: "Strategic direct tax planning, treaty interpretation, transfer pricing audits, and defense in tax prosecutions.",
+        detailedProfile: {
           intro: "We offer comprehensive legal solutions in Income Tax and International Taxation for corporations, High Net Worth Individuals, and multinational enterprises.",
           services: [
             {
@@ -182,14 +181,14 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
-      new PracticeAreaModel(
-        "white-collar",
-        "white-collar",
-        "White-Collar Crimes & Economic Offences",
-        "PMLA, Benami Act, Black Money Act, Tax Prosecutions",
-        "Specialized legal defense in economic offence trials, financial investigations, and regulatory enforcement.",
-        {
+      },
+      {
+        id: "white-collar",
+        slug: "white-collar",
+        title: "White-Collar Crimes & Economic Offences",
+        subtitle: "PMLA, Benami Act, Black Money Act, Tax Prosecutions",
+        shortDescription: "Specialized legal defense in economic offence trials, financial investigations, and regulatory enforcement.",
+        detailedProfile: {
           intro: "Aprajita Legal provides specialized defense for individuals and corporate entities facing investigation under PMLA, Benami, Black Money Act, and criminal tax provisions.",
           services: [
             {
@@ -204,14 +203,14 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
-      new PracticeAreaModel(
-        "commercial-disputes",
-        "commercial-disputes",
-        "Commercial, Corporate & Civil Disputes",
-        "NCLT/NCLAT, Shareholder Disputes, Real Estate & RERA",
-        "End-to-end legal advocacy in contractual breaches, corporate insolvency, shareholder suits, and civil writs.",
-        {
+      },
+      {
+        id: "commercial-disputes",
+        slug: "commercial-disputes",
+        title: "Commercial, Corporate & Civil Disputes",
+        subtitle: "NCLT/NCLAT, Shareholder Disputes, Real Estate & RERA",
+        shortDescription: "End-to-end legal advocacy in contractual breaches, corporate insolvency, shareholder suits, and civil writs.",
+        detailedProfile: {
           intro: "Our litigation team delivers precise courtroom advocacy and pre-litigation strategy across all judicial and quasi-judicial forums in India.",
           services: [
             {
@@ -225,14 +224,14 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
-      new PracticeAreaModel(
-        "arbitration",
-        "arbitration",
-        "Arbitration & Conciliation (ADR)",
-        "Domestic & International Commercial Arbitration (SIAC, ICC, LCIA, DIAC)",
-        "Dedicated ADR practice handling high-stakes commercial disputes and award enforcement.",
-        {
+      },
+      {
+        id: "arbitration",
+        slug: "arbitration",
+        title: "Arbitration & Conciliation (ADR)",
+        subtitle: "Domestic & International Commercial Arbitration (SIAC, ICC, LCIA, DIAC)",
+        shortDescription: "Dedicated ADR practice handling high-stakes commercial disputes and award enforcement.",
+        detailedProfile: {
           intro: "We represent clients in domestic and international arbitrations under Indian law and institutional rules like SIAC, ICC, LCIA, and UNCITRAL.",
           services: [
             {
@@ -246,14 +245,14 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
-      new PracticeAreaModel(
-        "banking-ibc",
-        "banking-ibc",
-        "Banking, Insolvency & Competition Law",
-        "NCLT/IBC Proceedings, DRT & SARFAESI, CCI Anti-Trust",
-        "Financial recovery, corporate restructuring, SARFAESI enforcement, and antitrust market regulation.",
-        {
+      },
+      {
+        id: "banking-ibc",
+        slug: "banking-ibc",
+        title: "Banking, Insolvency & Competition Law",
+        subtitle: "NCLT/IBC Proceedings, DRT & SARFAESI, CCI Anti-Trust",
+        shortDescription: "Financial recovery, corporate restructuring, SARFAESI enforcement, and antitrust market regulation.",
+        detailedProfile: {
           intro: "Strategic counsel for banks, financial institutions, resolution professionals, and corporate debtors in insolvency and regulatory compliance.",
           services: [
             {
@@ -267,7 +266,7 @@ export class LandingPageDataService {
             }
           ]
         }
-      ),
+      },
     ];
   }
 

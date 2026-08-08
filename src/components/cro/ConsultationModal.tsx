@@ -99,13 +99,20 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, on
                   <label className="block text-xs font-semibold uppercase text-[#3A3A3A] mb-1">
                     Legal Category
                   </label>
-                  <select className="w-full px-3.5 py-2.5 bg-white border border-[#9C7A58]/30 rounded-sm text-sm focus:outline-none focus:border-[#9C7A58]">
-                    <option>Criminal Defense</option>
-                    <option>Civil Litigation</option>
-                    <option>Corporate & Commercial</option>
-                    <option>Property & Family Dispute</option>
-                    <option>Other Legal Assistance</option>
-                  </select>
+                  <div className="relative">
+                    <select className="w-full appearance-none px-3.5 py-2.5 pr-10 bg-white border border-[#9C7A58]/30 hover:border-[#9C7A58]/60 rounded-xl text-sm font-medium focus:outline-none focus:border-[#9C7A58] focus:ring-2 focus:ring-[#9C7A58]/20 cursor-pointer text-[#3A3A3A] transition-all">
+                      <option>Criminal Defense</option>
+                      <option>Civil Litigation</option>
+                      <option>Corporate & Commercial</option>
+                      <option>Property & Family Dispute</option>
+                      <option>Other Legal Assistance</option>
+                    </select>
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3 text-[#9C7A58]">
+                      <svg className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
 

@@ -2,14 +2,16 @@
 
 import React from "react";
 import Image from "next/image";
+import { useOpenConsultation } from "@/components/layout/SiteShell";
 
 interface ContactSectionProps {
-  onOpenConsultation: () => void;
+  onOpenConsultation?: () => void;
 }
 
 export const ContactSection: React.FC<ContactSectionProps> = ({
   onOpenConsultation,
 }) => {
+  const openConsultation = onOpenConsultation ?? useOpenConsultation() ?? (() => {});
   return (
     <footer id="contact" className="bg-[#3A3A3A] text-white py-16 px-4">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -23,7 +25,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
               className="h-12 w-auto object-contain brightness-0 invert"
             />
           </div>
-          <p className="text-white/70 text-sm max-w-md leading-relaxed mb-6">
+          <p className="dark-copy text-white/70 text-sm max-w-md leading-relaxed mb-6">
             Boutique legal practice based in New Delhi providing strategic litigation, tax advisory, arbitration, and economic offences defense across India.
           </p>
 
@@ -59,16 +61,16 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
         </div>
 
         {/* CTA Card */}
-        <div className="bg-white/5 border border-white/10 p-8 rounded-sm text-center">
+        <div className="contact-panel dark-panel bg-white/5 border border-white/10 p-8 rounded-2xl text-center">
           <h3 className="font-serif text-2xl font-bold text-white mb-2">
             Schedule a Confidential Legal Consultation
           </h3>
-          <p className="text-white/70 text-xs md:text-sm mb-6">
+          <p className="dark-copy text-white/70 text-xs md:text-sm mb-6">
             Get immediate strategic clarity on your tax, corporate, or litigation matters from senior advocate team.
           </p>
           <button
-            onClick={onOpenConsultation}
-            className="w-full bg-[#B58B66] hover:bg-[#9C7A58] text-white py-3.5 rounded-sm text-sm font-semibold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer"
+            onClick={openConsultation}
+            className="w-full bg-[#B58B66] hover:bg-[#9C7A58] text-white py-3.5 rounded-xl text-sm font-semibold tracking-wider uppercase transition-colors flex items-center justify-center gap-2 cursor-pointer"
           >
             Request Case Evaluation
             <svg fill="none" height="16" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="16">

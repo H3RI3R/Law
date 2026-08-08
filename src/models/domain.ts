@@ -9,18 +9,7 @@ export interface IStat {
   highlighted?: boolean;
 }
 
-export class StatModel implements IStat {
-  constructor(
-    public readonly id: string,
-    public readonly value: string,
-    public readonly label: string,
-    public readonly highlighted: boolean = false
-  ) {}
-
-  public getFormattedValue(): string {
-    return this.value;
-  }
-}
+export type StatModel = IStat;
 
 export interface IAward {
   id: string;
@@ -29,14 +18,7 @@ export interface IAward {
   year?: string;
 }
 
-export class AwardModel implements IAward {
-  constructor(
-    public readonly id: string,
-    public readonly stars: number,
-    public readonly title: string,
-    public readonly year?: string
-  ) {}
-}
+export type AwardModel = IAward;
 
 export interface IAdvocate {
   id: string;
@@ -50,19 +32,7 @@ export interface IAdvocate {
   isFoundingPartner?: boolean;
 }
 
-export class AdvocateModel implements IAdvocate {
-  constructor(
-    public readonly id: string,
-    public readonly name: string,
-    public readonly designation: string,
-    public readonly qualifications: string,
-    public readonly bio: string,
-    public readonly specializations: string[],
-    public readonly experience?: string,
-    public readonly notableClients?: string[],
-    public readonly isFoundingPartner: boolean = false
-  ) {}
-}
+export type AdvocateModel = IAdvocate;
 
 export interface IPracticeArea {
   id: string;
@@ -79,22 +49,7 @@ export interface IPracticeArea {
   };
 }
 
-export class PracticeAreaModel implements IPracticeArea {
-  constructor(
-    public readonly id: string,
-    public readonly slug: string,
-    public readonly title: string,
-    public readonly subtitle: string,
-    public readonly shortDescription: string,
-    public readonly detailedProfile: {
-      intro: string;
-      services: {
-        category: string;
-        items: string[];
-      }[];
-    }
-  ) {}
-}
+export type PracticeAreaModel = IPracticeArea;
 
 export interface INavItem {
   label: string;
@@ -102,10 +57,4 @@ export interface INavItem {
   active?: boolean;
 }
 
-export class NavItemModel implements INavItem {
-  constructor(
-    public readonly label: string,
-    public readonly href: string,
-    public readonly active: boolean = false
-  ) {}
-}
+export type NavItemModel = INavItem;

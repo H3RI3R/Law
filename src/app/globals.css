@@ -16,10 +16,71 @@ body {
   font-family: var(--font-inter), sans-serif;
 }
 
+/* Dark Theme Overrides */
+body[data-theme="dark"] {
+  background-color: #050505 !important;
+  color: #f3eee7 !important;
+}
+
+body[data-theme="dark"] main,
+body[data-theme="dark"] section,
+body[data-theme="dark"] footer {
+  color: #f3eee7 !important;
+  background-color: #050505 !important;
+}
+
+body[data-theme="dark"] header {
+  background: rgba(10, 10, 10, 0.88) !important;
+  border-bottom: 1px solid rgba(181, 139, 102, 0.18) !important;
+}
+
+/* Cards & Panels in Dark Theme */
+body[data-theme="dark"] .bg-white,
+body[data-theme="dark"] .contact-panel,
+body[data-theme="dark"] .chambers-card,
+body[data-theme="dark"] .practice-card,
+body[data-theme="dark"] .about-panel,
+body[data-theme="dark"] .advocate-panel {
+  background-color: #101010 !important;
+  border-color: rgba(181, 139, 102, 0.25) !important;
+}
+
+body[data-theme="dark"] .emergency-card {
+  background-color: #151515 !important;
+  border-color: rgba(181, 139, 102, 0.4) !important;
+}
+
+/* Typography in Dark Theme */
+body[data-theme="dark"] .dark-copy,
+body[data-theme="dark"] p,
+body[data-theme="dark"] label {
+  color: #c8c0b7;
+}
+
+body[data-theme="dark"] h1,
+body[data-theme="dark"] h2,
+body[data-theme="dark"] h3,
+body[data-theme="dark"] h4 {
+  color: #9C7A58;
+}
+
+/* Inputs & Textareas in Dark Theme */
+body[data-theme="dark"] input,
+body[data-theme="dark"] textarea,
+body[data-theme="dark"] select {
+  background-color: #181818 !important;
+  color: #f3eee7 !important;
+  border-color: rgba(181, 139, 102, 0.35) !important;
+}
+
+body[data-theme="dark"] input::placeholder,
+body[data-theme="dark"] textarea::placeholder {
+  color: #8a837a !important;
+}
+
 .watermark-text {
-  font-size: 18vw;
-  color: rgba(0, 0, 0, 0.03);
-  font-weight: 700;
+  font-size: 22vw;
+  font-weight: 900;
   white-space: nowrap;
   position: absolute;
   top: 50%;
@@ -28,6 +89,12 @@ body {
   z-index: 0;
   pointer-events: none;
   font-family: var(--font-inter), sans-serif;
+  background: linear-gradient(180deg, rgba(181, 139, 102, 0.28) 0%, rgba(156, 122, 88, 0.08) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 12px 28px rgba(181, 139, 102, 0.25)) drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.12));
+  opacity: 0.88;
+  user-select: none;
 }
 
 @keyframes spinSlow {
@@ -41,4 +108,48 @@ body {
 
 .animate-spin-slow {
   animation: spinSlow 20s linear infinite;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* Scoped Theme Rules for Active Theme Toggle */
+body[data-theme="dark"] .dark\:bg-\[\#2A2A2A\],
+.dark .dark\:bg-\[\#2A2A2A\] {
+    background-color: #000000 !important;
+}
+
+body[data-theme="dark"] .dark\:text-\[\#E6D8C8\],
+.dark .dark\:text-\[\#E6D8C8\] {
+    color: #9c7a58 !important;
+}
+
+body[data-theme="dark"] .dark\:text-\[\#F3EEE7\],
+.dark .dark\:text-\[\#F3EEE7\] {
+    color: #9c9c9c !important;
+}
+
+body[data-theme="dark"] .dark\:bg-\[\#181818\],
+.dark .dark\:bg-\[\#181818\] {
+    background-color: #181818 !important;
+}
+
+/* Explicit Light Theme Locks for Badges, Icons & Cards */
+body[data-theme="light"] .dark\:bg-\[\#2A2A2A\] {
+    background-color: #FAF6F0 !important;
+    color: #9C7A58 !important;
+}
+
+body[data-theme="light"] .dark\:bg-\[\#181818\] {
+    background-color: #FFFFFF !important;
+    color: #3A3A3A !important;
+}
+
+body[data-theme="light"] .dark\:text-\[\#E6D8C8\] {
+    color: #9C7A58 !important;
+}
+
+body[data-theme="light"] .dark\:text-\[\#F3EEE7\] {
+    color: #3A3A3A !important;
 }

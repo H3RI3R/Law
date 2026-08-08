@@ -23,7 +23,7 @@ export const StatsSection: React.FC<StatsSectionProps> = ({ stats }) => {
                 isThird ? "text-[#9C7A58]" : "text-[#3A3A3A]"
               }`}
             >
-              {stat.getFormattedValue()}
+              {stat.value}
             </div>
             <div className="text-xs md:text-sm text-[#6B6B6B] uppercase tracking-wider">
               {stat.label}
