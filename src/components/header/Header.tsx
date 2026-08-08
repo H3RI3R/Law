@@ -19,13 +19,13 @@ export const Header: React.FC<HeaderProps> = ({ navItems, onOpenConsultation, th
   return (
     <header className="w-full py-4 px-8 lg:px-16 flex justify-between items-center fixed top-0 left-0 right-0 z-50 bg-[#FAF6F0]/90 backdrop-blur-sm">
       {/* Logo */}
-      <Link href="/" className="flex items-center gap-3 cursor-pointer">
+      <Link href="/" className="flex items-center gap-3 cursor-pointer py-1">
         <Image
           src="/logo.png"
           alt="Aprajita Legal Logo"
-          width={180}
-          height={50}
-          className="h-10 md:h-12 w-auto object-contain"
+          width={280}
+          height={90}
+          className="h-14 md:h-20 lg:h-22 w-auto object-contain transition-transform hover:scale-105"
           priority
         />
       </Link>
