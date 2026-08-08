@@ -89,11 +89,11 @@ body[data-theme="dark"] textarea::placeholder {
   z-index: 0;
   pointer-events: none;
   font-family: var(--font-inter), sans-serif;
-  background: linear-gradient(180deg, rgba(181, 139, 102, 0.28) 0%, rgba(156, 122, 88, 0.08) 100%);
+  background: linear-gradient(180deg, rgba(181, 139, 102, 0.45) 0%, rgba(156, 122, 88, 0.20) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: blur(2px) drop-shadow(0px 12px 28px rgba(181, 139, 102, 0.28)) drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.12));
-  opacity: 0.88;
+  filter: blur(3px) drop-shadow(0px 16px 36px rgba(181, 139, 102, 0.4)) drop-shadow(0px 6px 16px rgba(0, 0, 0, 0.2));
+  opacity: 1;
   user-select: none;
 }
 
