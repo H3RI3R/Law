@@ -92,7 +92,7 @@ body[data-theme="dark"] textarea::placeholder {
   background: linear-gradient(180deg, rgba(181, 139, 102, 0.28) 0%, rgba(156, 122, 88, 0.08) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0px 12px 28px rgba(181, 139, 102, 0.25)) drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.12));
+  filter: blur(2px) drop-shadow(0px 12px 28px rgba(181, 139, 102, 0.28)) drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.12));
   opacity: 0.88;
   user-select: none;
 }
